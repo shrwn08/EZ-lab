@@ -24,7 +24,7 @@ const initialState = {
   email: "",
   isLoading: false,
   isError: false,
-  isSubmitted : false
+  isSubmitted: false,
 };
 const formSlice = createSlice({
   name: "form",
@@ -32,7 +32,7 @@ const formSlice = createSlice({
   reducers: {
     setEmail: (state, action) => {
       state.email = action.payload;
-      state.isSubmitted = false
+      state.isSubmitted = false;
     },
   },
   extraReducers: (builder) => {
@@ -45,15 +45,16 @@ const formSlice = createSlice({
     builder.addCase(formSubmit.fulfilled, (state) => {
       state.isLoading = false;
       state.isError = false;
-      state.isSubmitted = true
+      state.isSubmitted = true;
     });
 
-    builder.addCase(formSubmit.rejected, state=>{state.isError = true;
-        state.isLoading = false; state.isError = true; state.isSubmitted = false;
-    })
+    builder.addCase(formSubmit.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+      state.isSubmitted = false;
+    });
   },
 });
 
-
-export const {setEmail} = formSlice.actions;
+export const { setEmail } = formSlice.actions;
 export default formSlice.reducer;

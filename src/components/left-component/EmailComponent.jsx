@@ -24,8 +24,7 @@ const [validationError, setValidationError] = useState('');
       return;
     }
     setValidationError('');
-    dispatch(formSubmit(email));
-    setEmail('');
+    dispatch(formSubmit(email)).then(()=>dispatch(setEmail('')));
   }
 
   return (

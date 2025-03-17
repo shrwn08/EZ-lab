@@ -4,6 +4,9 @@
   font-family: Roboto, "Helvetica Neue", Arial, sans-serif, -apple-system,
     BlinkMacSystemFont, "Segoe UI";
 }
+button{
+  cursor: pointer;
+}
 .app {
   width: 100%;
   min-height: 100vh;
