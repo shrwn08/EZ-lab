@@ -32,6 +32,7 @@ const Cards = () => {
     }
     setValidationError("");
     dispatch(formSubmit(email));
+    setEmail('');
   };
   const data = [
     {
